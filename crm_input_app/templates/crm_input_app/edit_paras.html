@@ -1,0 +1,26 @@
+{%extends "crm_input_app/base.html"%}
+
+{% load bootstrap3 %}
+
+
+
+{% block header %}
+
+	<h2> Edit this parameter set:</h2>
+
+{% endblock header %}
+
+{%block content%}
+<p>Edit parameter set: {{paras}}</p>
+
+<form action="{%url 'crm_input_app:edit_paras' paras.id%}" method='post'>
+{%csrf_token%}
+
+{%bootstrap_form form%}
+
+<button name="Submit"> Save changes</button>
+</form>
+
+
+
+{% endblock content%}

@@ -1,0 +1,54 @@
+{%extends "crm_input_app/base.html"%}
+
+{%block content%}
+  <h2>You have successfully saved the following parameter set</h2>
+    
+
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+  			<h3>
+  				 {{paras}}
+
+  				  
+  				
+  			</h3>
+  			<small>
+  				 	<a href="{% url 'crm_input_app:edit_paras' paras.id%}"> Edit Parameters</a> -
+  				 	<a href="{% url 'crm_input_app:result' paras.id %}"> View Result</a>
+  			</small>
+
+
+  		</div>
+
+  		<div class= "panel-body">
+  				<ul>
+					{%for fieldname, val, display in paras%}
+
+					<li>{{fieldname}} : {{display}}</a></li>
+
+
+					{%endfor%}
+
+   
+
+ 				</ul>
+
+  		</div>
+
+  	</div>
+
+
+
+<p>
+<a href="{% url 'crm_input_app:parasList'%}">  Back to Parameters List</a>
+
+<p>
+<a href="{% url 'crm_input_app:edit_paras' paras.id%}"> Edit Parameters</a>
+</p>
+
+<p>
+
+<a href="{% url 'crm_input_app:result' paras.id %}"> View Results</a>
+</p>
+
+{%endblock content%}

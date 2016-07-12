@@ -1,0 +1,61 @@
+{%extends "crm_input_app/base.html"%}
+{%load bootstrap3%}
+
+{% block header%}
+<h2> Saved Parameter Sets</h2>
+{% endblock%}
+
+
+{%block content%}
+  
+<p><a href="{% url 'crm_input_app:new_paras'%}">Add a new parameter set.</a></p>
+
+
+	{%for paras in paraslist%}
+  	
+  		<div class="panel panel-default">
+  			<div class="panel-heading">
+  				<h3>
+  				 {{paras}}
+
+  				  
+  				
+  				</h3>
+  				<small>
+  				 	<a href="{% url 'crm_input_app:edit_paras' paras.id%}"> Edit Parameters</a> -
+  				 	<a href="{% url 'crm_input_app:result' paras.id %}"> View Result</a>
+  				 </small>
+
+
+  			</div>
+
+  			<div class= "panel-body">
+  				<ul>
+					{%for fieldname, val, display in paras%}
+
+					<li>{{fieldname}} : {{display}}</a></li>
+
+
+					{%endfor%}
+
+   
+
+ 				</ul>
+
+  			</div>
+  		</div>
+
+
+
+
+
+	{%empty%}
+
+	<p>No parameters have been added yet.</p>
+
+	
+	{%endfor%}
+
+ 
+
+{%endblock content%}

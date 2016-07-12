@@ -1,0 +1,19 @@
+{%extends "crm_input_app/base.html"%}
+
+{%block content%}
+  <p> Result Page for Parameter Set {{paras.id}}</p>
+<p>
+
+<script type='text/javascript' src='https://riotabqa.appl.kp.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 1362px;'><object class='tableauViz' width='1004' height='1362' style='display:none;'><param name='host_url' value='https%3A%2F%2Friotabqa.appl.kp.org%2F' /> <param name='site_root' value='&#47;t&#47;TRM-DEV' /><param name='name' value='SHA-1CertificationsMigration&#47;SHAMigrationDashboard' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showVizHome' value='n' /><param name='bootstrapWhenNotified' value='y' /><param name='filter' value='%3AopenAuthoringInTopWindow=true' /><param name='filter' value='%3AbrowserBackButtonUndo=true' /><param name='filter' value='%3AreloadOnCustomViewSave=true' /><param name='filter' value='%3AshowShareOptions=true' /></object></div>
+
+
+</p>
+
+  <p>
+<a href="{% url 'crm_input_app:parasList'%}">  Back to Parameters List</a>
+
+<p>
+<a href="{% url 'crm_input_app:edit_paras' paras.id%}"> Edit Parameters</a>
+</p>
+
+{%endblock content%}

@@ -1,0 +1,27 @@
+{% extends "crm_input_app/base.html" %}
+
+{% load bootstrap3 %}
+
+{% block header %}
+
+	<h2> Add a new parameter set:</h2>
+
+{% endblock header %}
+
+{%block content%}
+
+
+	<form action="{%url 'crm_input_app:new_paras'%}" method='post' class="form">
+		{%csrf_token%}
+
+		{% bootstrap_form form %}
+
+		
+
+			<button name="Submit"> Add Parameter Set </button>
+
+		
+
+	</form>
+
+{% endblock content%}
